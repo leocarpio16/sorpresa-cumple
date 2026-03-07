@@ -1,18 +1,252 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Sorpresas de Marzo</title>
+<title>Un mensaje para ti</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:none;
+margin:5px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:white;
+cursor:pointer;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+margin:20px auto;
+border-radius:15px;
+max-width:500px;
+transition:0.5s;
+}
+
+.locked{
+opacity:0.6;
+}
+
+.unlocked{
+background:#16a34a;
+transform:scale(1.05);
+animation:pop 0.6s;
+}
+
+@keyframes pop{
+0%{transform:scale(0.7)}
+70%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+.countdown{
+font-size:18px;
+margin-top:10px;
+color:#38bdf8;
+}
+
+#contenido{
+display:none;
+}
+
+</style>
+
 </head>
 
-<body style="background:#0f172a;color:white;text-align:center;font-family:Arial">
+<body>
 
-<h1>🎁 Sorpresas de tu amigo secreto</h1>
+<div id="login">
+
+<h1>Acceso privado</h1>
+
+<p>Usuario</p>
+<input id="user">
+
+<p>Contraseña</p>
+<input type="password" id="pass">
+
+<br><br>
+
+<button onclick="login()">Entrar</button>
+
+</div>
+
+
+
+<div id="contenido">
+
+<h1>hola tu no me conoces y no tienes idea de quien soy pero te tengo 3 sorpresas</h1>
 
 <p>
-Durante este mes recibirás 3 sorpresas.<br>
-Cada semana se desbloqueará una pista.
+este mes (el mejor) te daré 3 regalos por bonita... ah y porque es tu cumple<br>
+cada semana se desbloqueará una pista.
 </p>
+
+
+
+<div id="evento1" class="card locked">
+
+<h2>salida 1 </h2>
+
+<div id="count1" class="countdown"></div>
+
+<p id="info1"></p>
+
+</div>
+
+
+
+<div id="evento2" class="card locked">
+
+<h2>salida 2 </h2>
+
+<div id="count2" class="countdown"></div>
+
+<p id="info2"></p>
+
+</div>
+
+
+
+<div id="evento3" class="card locked">
+
+<h2>salida 3 </h2>
+
+<div id="count3" class="countdown"></div>
+
+<p id="info3"></p>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+function login(){
+
+let usuario=document.getElementById("user").value
+let pass=document.getElementById("pass").value
+
+if(usuario=="Hannia Lopez Doriga" && pass=="Leomequieremas"){
+
+document.getElementById("login").style.display="none"
+document.getElementById("contenido").style.display="block"
+
+}else{
+
+alert("Usuario o contraseña incorrectos")
+
+}
+
+}
+
+
+
+let fecha1=new Date("2026-03-13T18:00:00")
+let fecha2=new Date("2026-03-20T18:00:00")
+let fecha3=new Date("2026-03-27T18:00:00")
+
+
+
+function actualizar(){
+
+revisarEvento(
+fecha1,
+"evento1",
+"count1",
+"info1",
+" primera sorpresa desbloqueada!!<br><br>Instrucciones:<br>Sal al pasillo de tu casa<br><br>Pista de regalo: Cenicienta"
+)
+
+revisarEvento(
+fecha2,
+"evento2",
+"count2",
+"info2",
+"seegunda sorpresa desbloqueada!!<br><br>Instrucciones:<br>Usa zapatos cómodos.<br><br>Pista de regalo: unboxing??"
+)
+
+revisarEvento(
+fecha3,
+"evento3",
+"count3",
+"info3",
+" última sorpresa desbloqueada!!<br><br>Al fin sabrás quien soy #facereveal<br><br>Pista de regalo: siempre podremos estar juntos aunque fisicamente no lo estemos"
+)
+
+}
+
+
+
+function revisarEvento(fecha,idCard,idCount,idInfo,mensaje){
+
+let ahora=new Date()
+
+let diff=fecha-ahora
+
+
+
+if(diff<=0){
+
+let card=document.getElementById(idCard)
+
+card.classList.remove("locked")
+
+card.classList.add("unlocked")
+
+document.getElementById(idCount).innerHTML="Desbloqueado"
+
+document.getElementById(idInfo).innerHTML=mensaje
+
+}else{
+
+let dias=Math.floor(diff/(1000*60*60*24))
+
+let horas=Math.floor(diff/(1000*60*60)%24)
+
+let minutos=Math.floor(diff/(1000*60)%60)
+
+let segundos=Math.floor(diff/1000%60)
+
+document.getElementById(idCount).innerHTML=
+"⏳ Se desbloquea en: "+
+dias+"d "+
+horas+"h "+
+minutos+"m "+
+segundos+"s"
+
+}
+
+}
+
+
+
+setInterval(actualizar,1000)
+
+</script>
+
+
 
 </body>
 </html>
