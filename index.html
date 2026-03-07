@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;title&gt;Sorpresas de Marzo&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">body{</p>
+<p class="p1">font-family: Arial;</p>
+<p class="p1">background:#0f172a;</p>
+<p class="p1">color:white;</p>
+<p class="p1">text-align:center;</p>
+<p class="p1">padding:40px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.card{</p>
+<p class="p1">background:#1e293b;</p>
+<p class="p1">padding:25px;</p>
+<p class="p1">margin:20px;</p>
+<p class="p1">border-radius:15px;</p>
+<p class="p1">transition:0.5s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.locked{</p>
+<p class="p1">opacity:0.6;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.unlocked{</p>
+<p class="p1">background:#16a34a;</p>
+<p class="p1">transform:scale(1.05);</p>
+<p class="p1">animation:pop 0.7s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">@keyframes pop{</p>
+<p class="p1">0%{transform:scale(0.7)}</p>
+<p class="p1">70%{transform:scale(1.1)}</p>
+<p class="p1">100%{transform:scale(1)}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.countdown{</p>
+<p class="p1">font-size:18px;</p>
+<p class="p1">margin-top:10px;</p>
+<p class="p1">color:#38bdf8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">#contenido{</p>
+<p class="p1">display:none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="login"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;Acceso privado&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;p&gt;Usuario&lt;/p&gt;</p>
+<p class="p1">&lt;input id="user"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;p&gt;Contraseña&lt;/p&gt;</p>
+<p class="p1">&lt;input type="password" id="pass"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;br&gt;&lt;br&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;button onclick="login()"&gt;Entrar&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="contenido"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h1&gt;🎁 Mensaje de tu amigo secreto&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;p&gt;</p>
+<p class="p1">Durante este mes tendrás 3 sorpresas.&lt;br&gt;</p>
+<p class="p1">Cada semana se desbloqueará una pista.</p>
+<p class="p1">&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="evento1" class="card locked"&gt;</p>
+<p class="p1">&lt;h2&gt;Salida 1 🔒&lt;/h2&gt;</p>
+<p class="p1">&lt;div id="count1" class="countdown"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;p id="info1"&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="evento2" class="card locked"&gt;</p>
+<p class="p1">&lt;h2&gt;Salida 2 🔒&lt;/h2&gt;</p>
+<p class="p1">&lt;div id="count2" class="countdown"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;p id="info2"&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="evento3" class="card locked"&gt;</p>
+<p class="p1">&lt;h2&gt;Salida 3 🔒&lt;/h2&gt;</p>
+<p class="p1">&lt;div id="count3" class="countdown"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;p id="info3"&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">function login(){</p>
+<p class="p2"><br></p>
+<p class="p1">let usuario = document.getElementById("user").value</p>
+<p class="p1">let pass = document.getElementById("pass").value</p>
+<p class="p2"><br></p>
+<p class="p1">if(usuario=="invitada" &amp;&amp; pass=="misterio"){</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById("login").style.display="none"</p>
+<p class="p1">document.getElementById("contenido").style.display="block"</p>
+<p class="p2"><br></p>
+<p class="p1">}else{</p>
+<p class="p2"><br></p>
+<p class="p1">alert("Usuario o contraseña incorrectos")</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">let fecha1 = new Date("2026-03-13T18:00:00")</p>
+<p class="p1">let fecha2 = new Date("2026-03-20T18:00:00")</p>
+<p class="p1">let fecha3 = new Date("2026-03-27T18:00:00")</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">function actualizar(){</p>
+<p class="p2"><br></p>
+<p class="p1">revisarEvento(</p>
+<p class="p1">fecha1,</p>
+<p class="p1">"evento1",</p>
+<p class="p1">"count1",</p>
+<p class="p1">"info1",</p>
+<p class="p1">"🎉 Primera sorpresa desbloqueada&lt;br&gt;&lt;br&gt;Instrucciones:&lt;br&gt;Vístete elegante&lt;br&gt;&lt;br&gt;Pista: 🍝"</p>
+<p class="p1">)</p>
+<p class="p2"><br></p>
+<p class="p1">revisarEvento(</p>
+<p class="p1">fecha2,</p>
+<p class="p1">"evento2",</p>
+<p class="p1">"count2",</p>
+<p class="p1">"info2",</p>
+<p class="p1">"🎉 Segunda sorpresa desbloqueada&lt;br&gt;&lt;br&gt;Instrucciones:&lt;br&gt;Zapatos cómodos&lt;br&gt;&lt;br&gt;Pista: 🎨"</p>
+<p class="p1">)</p>
+<p class="p2"><br></p>
+<p class="p1">revisarEvento(</p>
+<p class="p1">fecha3,</p>
+<p class="p1">"evento3",</p>
+<p class="p1">"count3",</p>
+<p class="p1">"info3",</p>
+<p class="p1">"🎉 Última sorpresa desbloqueada&lt;br&gt;&lt;br&gt;Prepárate para algo especial&lt;br&gt;&lt;br&gt;Pista: 🌌"</p>
+<p class="p1">)</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">function revisarEvento(fecha,idCard,idCount,idInfo,mensaje){</p>
+<p class="p2"><br></p>
+<p class="p1">let ahora = new Date()</p>
+<p class="p2"><br></p>
+<p class="p1">let diff = fecha-ahora</p>
+<p class="p2"><br></p>
+<p class="p1">if(diff&lt;=0){</p>
+<p class="p2"><br></p>
+<p class="p1">let card = document.getElementById(idCard)</p>
+<p class="p2"><br></p>
+<p class="p1">card.classList.remove("locked")</p>
+<p class="p1">card.classList.add("unlocked")</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById(idCount).innerHTML="🔓 Desbloqueado"</p>
+<p class="p1">document.getElementById(idInfo).innerHTML=mensaje</p>
+<p class="p2"><br></p>
+<p class="p1">}else{</p>
+<p class="p2"><br></p>
+<p class="p1">let dias=Math.floor(diff/(1000*60*60*24))</p>
+<p class="p1">let horas=Math.floor(diff/(1000*60*60)%24)</p>
+<p class="p1">let minutos=Math.floor(diff/(1000*60)%60)</p>
+<p class="p1">let segundos=Math.floor(diff/1000%60)</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById(idCount).innerHTML=</p>
+<p class="p1">"⏳ Se desbloquea en: "+</p>
+<p class="p1">dias+"d "+</p>
+<p class="p1">horas+"h "+</p>
+<p class="p1">minutos+"m "+</p>
+<p class="p1">segundos+"s"</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">setInterval(actualizar,1000)</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
