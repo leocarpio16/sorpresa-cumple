@@ -204,10 +204,10 @@ origin:{y:0.6}
   
 function login(){
 
-let usuario=document.getElementById("user").value
-let pass=document.getElementById("pass").value
+let usuario=document.getElementById("user").value.trim().toLowerCase()
+let pass=document.getElementById("pass").value.trim()
 
-if(usuario=="Hannia" && pass=="panzon"){
+if(usuario=="hannia" && pass=="panzon"){
 
 document.getElementById("login").style.display="none"
 document.getElementById("contenido").style.display="block"
